@@ -23,7 +23,7 @@ pipeline {
          stage('CD') {
             steps {
                 git 'https://github.com/NadaMarei/DevOps_Project_NodejsApp.git'
-                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                 sh """
                 kubectl create namespace app
              
